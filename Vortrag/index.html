@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- CSS MD -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/md.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- Optional - custom css -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/custom.css">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+    <script src="static/js/marked.js"></script>
+    <script src="static/js/md.js"></script>
+  </head>
+  <body onload="md_parse ();">
+
+    <main role="main">
+      <article id="webslides" class="vertical bg-black">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+        <section style="background-image:url('static/img/rpi.jpg');background-size: cover;">
+          <h1 style="color: white; text-align: center; font-size: 10vh;">
+            Einblick in die Welt der leuchtenden Dinge
+          </h1>
+          <div class="picAck">
+            <p>Photo by Chris Ried on Unsplash</p>
+          </div>
+        </section>
+
+        <section> <!--Agenda-->
+          <md>
+# Agenda
+
+* Einführung
+* Mikrocontroller
+* LED-Matrix
+* Lauftext
+* Wetter-API
+* Dynamischer Text
+          </md>
+        </section>
+
+        <section class="fullscreen"> <!--Intro-->
+          <div class="card-50">
+            <figure>
+              <img src="static/img/toddler.jpg" alt="Game">
+          <div class="picAck">
+            <p>Photo by Markus Spiske on Unsplash</p>
+          </div>
+            </figure>
+            <!-- end figure-->
+            <div class="flex-content">
+              <h1>Introduction</h1>
+              <div style="height:5vh"></div>
+              <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">Internet of Things</div>
+              <div style="height:5vh"></div>
+              <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">Industie 4.0</div>
+              <div style="height:5vh"></div>
+              <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">Rapid Prototyping</div>
+            </div>
+            <!-- end .flex-content-->
+          </div>
+        </section>
+
+        <section> <!--IoT-->
+          <blockquote class="text-quote">
+            <p>
+              Das Internet der Dinge ist ein Sammelbegriff für Technologien einer globalen Infrastruktur der Informationsgesellschaften, die es ermöglicht, physische und virtuelle Gegenstände miteinander zu vernetzen und sie durch Informations- und Kommunikationstechniken zusammenarbeiten zu lassen.
+            </p>
+            <p><cite>Cisco Internet Business Solutions Group</cite></p>
+          </blockquote>
+          <div style="height:10vh"></div>
+          <blockquote class="text-quote">
+            <p>
+              A world-wide network of interconnected objects uniquely addressable, based on standard communication protocols.
+            </p>
+            <p><cite>DG Connect, ENISA</cite></p>
+          </blockquote>
+        </section>
+
+        <section style="font-size: 3vw"> <!--Industrie 4.0-->
+            <div class="card-60 bg-dark-gray" style="height:15vh">
+              <figure>
+                <img src="static/img/coal.jpg"  alt="Man in a motorcycle">
+                <p class="picAck">Photo by Samuel Zeller on Unsplash</p>
+              </figure>
+              <div class="flex-content">
+                Dampfmaschine
+              </div>
+            </div>
+            <div style="height:5vh"></div>
+            <div class="card-60 bg-dark-gray" style="height:15vh; text-align:right">
+                <div class="flex-content">
+                  Fließband
+                </div>
+              <figure>
+                <img src="static/img/assemblyline.jpg" alt="Man in a motorcycle">
+                <p class="picAck"></p>
+              </figure>
+            </div>
+            <div style="height:5vh"></div>
+            <div class="card-60 bg-dark-gray" style="height:15vh">
+              <figure>
+                <img src="static/img/bestm.jpg" style="height:15vh" alt="Man in a motorcycle">
+                <p class="picAck">Photo by Louis Reed on Unsplash</p>
+              </figure>
+              <div class="flex-content">
+                Elektronik
+              </div>
+            </div>
+            <div style="height:5vh"></div>
+            <div class="card-60 bg-dark-gray" style="height:15vh; text-align:right">
+              <div class="flex-content">
+                Digitalisierung
+              </div>
+              <figure>
+                <img src="static/img/vr.jpg" style="height:15vh" alt="Man in a motorcycle">
+                <p class="picAck">Photo by Josh Riemer on Unsplash</p>
+              </figure>
+            </div>
+        </section>
+
+        <section class="fullscreen"> <!--Rapid Prototyping-->
+          <div class="card-50">
+              <div class="flex-content">
+                  <h1>Rapid Prototyping</h1>
+                  <div style="height:5vh"></div>
+                  <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">3D-Druck</div>
+                  <div style="height:5vh"></div>
+                  <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">Mikrocontroller</div>
+                  <div style="height:5vh"></div>
+                  <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">Frameworks</div>
+                  <div style="height:5vh"></div>
+                  <div class="bg-dark-gray" style="height:15vh;display:flex;justify-content:center;align-items:center;">Simulation</div>
+              </div>
+              <!-- end .flex-content-->
+            <figure>
+              <img src="static/img/3dp.jpg" alt="Game">
+              <div class="picAck">
+                <p>Photo by Rob Wingate on Unsplash</p>
+              </div>
+            </figure>
+            <!-- end figure-->
+          </div>
+        </section>
+
+        <section style="background-image:url('static/img/mic.jpg');background-size: cover;">
+          <h1 style="color: white; text-align: center; font-size: 10vh;">
+            Mikrocontroller
+          </h1>
+          <div class="picAck">
+            <p>Photo by Louis Reed on Unsplash</p>
+          </div>
+        </section>
+
+        <section style="background-image:url('static/img/ledm.jpg');background-size: cover;">
+          <h1 style="color: white; text-align: center; font-size: 10vh;">
+            LED-Matrix
+          </h1>
+          <div class="picAck">
+            <p>Photo by Vlad Tchompalov on Unsplash</p>
+          </div>
+        </section>
+
+        <section>
+tikz bild von led matrix
+        </section>
+
+        <section style="background-image:url('static/img/bug.gif');background-size: cover;">
+        </section>
+
+        <section style="background-image:url('static/img/cloud.jpg');background-size: cover;">
+          <h1 style="color: white; text-align: center; font-size: 10vh;">
+            Wetter
+          </h1>
+          <div class="picAck">
+            <p>Photo by Kaushik Panchal on Unsplash</p>
+          </div>
+        </section>
+
+        <section style="background-image:url('static/img/smartphone.jpg');background-size: cover;">
+          <h1 style="color: white; text-align: center; font-size: 10vh;">
+            Interaktion
+          </h1>
+          <div class="picAck">
+            <p>Photo by Paul Hanaoka on Unsplash</p>
+          </div>
+        </section>
+  
+      </article>
+      <!-- end article -->
+    </main>
+    <!-- end main -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
