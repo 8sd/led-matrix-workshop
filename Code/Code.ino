@@ -1,20 +1,18 @@
 #include <Arduino.h>
 #include "phathd.h"
+#include "text.h"
 
 #define LED_PIN 2
 
-bool f0 [7] = {0, 0, 0, 0, 0, 0, 0};
-bool f1 [7] = {1, 0, 0, 0, 0, 0, 0};
-bool f2 [7] = {0, 1, 0, 0, 0, 0, 0};
-bool f3 [7] = {1, 1, 0, 0, 0, 0, 0};
-bool f4 [7] = {0, 0, 1, 0, 0, 0, 0};
-bool f5 [7] = {1, 0, 1, 0, 0, 0, 0};
-bool f6 [7] = {0, 1, 1, 0, 0, 0, 0};
-bool f7 [7] = {1, 1, 1, 0, 0, 0, 0};
-bool f8 [7] = {0, 0, 0, 1, 0, 0, 0};
-bool f9 [7] = {1, 0, 0, 1, 0, 0, 0};
+uint8_t frame_len = 100;
+bool* frame1 [100];
 
-bool* frame1 [] = {f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f1, f2, f3, f4, f5, f6, f7, f8, f9, f0};
+void print2dArray (bool *arry [7], uint8_t len) {
+  for (uint8_t i = 0; i < len; i++) {
+    printArray(arry[i]);
+  }
+  
+}
 
 void blink () {
   digitalWrite(LED_PIN, HIGH);
@@ -27,11 +25,13 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(LED_PIN, OUTPUT);
-  blink();
+  init_text();
   if (init_led()) {
     while (1);
   }
-  setScrollingFrame(frame1, 30);
+  frame_len = build_frame(frame1, frame_len, "hallo ");
+  setScrollingFrame(frame1, frame_len);
+  blink();
 }
 
 void loop() {

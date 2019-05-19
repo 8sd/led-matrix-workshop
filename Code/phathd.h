@@ -16,4 +16,6 @@ void scroll (uint8_t steps = 1);
 void setFrame (bool* frame [17]);
 void setScrollingFrame (bool *_scrollingFrame [], uint8_t _frameLength);
 void setBrightness (uint8_t _brightness);
+
+void printArray (bool arry [7]);
 #endif
