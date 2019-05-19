@@ -56,7 +56,7 @@ void set_frame (bool* _frame [17]) {
   for (size_t i = 0; i < 17; i++) {
     frame[i] = _frame[i];
   }
-  displayFrame();
+  display_frame();
 }
 
 void display_frame () {
@@ -64,9 +64,9 @@ void display_frame () {
   for (size_t i = 0; i < 17; i++) {
     for (size_t j = 0; j < 7; j++) {
       if (frame [i][j]) {
-        setPixel(i, j, brightness);
+        set_pixel(i, j, brightness);
       } else {
-        setPixel(i, j, 0);
+        set_pixel(i, j, 0);
       }
     }
   }
@@ -95,5 +95,5 @@ void scroll (uint8_t steps) {
     Serial.print(";");
   }*/
 
-  displayFrame();
+  display_frame();
 }
