@@ -10,6 +10,6 @@ struct character {
 };
 
 void init_text ();
-uint8_t build_frame (bool *_scrollingFrame [], uint8_t _scrollingFrameLen, char *str, uint8_t str_len = 0);
+uint8_t build_frame (bool *_scrollingFrame [], uint8_t _scrollingFrameLen, const char *str, uint8_t str_len = 0);
 
 #endif

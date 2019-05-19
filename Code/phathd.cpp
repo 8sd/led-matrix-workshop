@@ -10,7 +10,7 @@ uint8_t scrollingStep = 0;
 bool* scrollingFrame [100];
 
 
-void printArray (bool arry [7]){
+void print_array (bool arry [7]){
   char str [32];
   uint8_t arr [7];
   for (size_t i = 0; i < 7; i++)
@@ -33,11 +33,11 @@ bool init_led (uint8_t _brightness) {
   return !ledmatrix.begin();
 }
 
-void setBrightness (uint8_t _brightness) {
+void set_brightness (uint8_t _brightness) {
   brightness = _brightness;
 }
 
-void setPixel (uint8_t x, uint8_t y, uint8_t val) {
+void set_pixel (uint8_t x, uint8_t y, uint8_t val) {
   if (x > 16 || y > 6) {
     return;
   }
@@ -52,14 +52,14 @@ void setPixel (uint8_t x, uint8_t y, uint8_t val) {
   ledmatrix.drawPixel(y, x, val);
 }
 
-void setFrame (bool* _frame [17]) {
+void set_frame (bool* _frame [17]) {
   for (size_t i = 0; i < 17; i++) {
     frame[i] = _frame[i];
   }
   displayFrame();
 }
 
-void displayFrame () {
+void display_frame () {
   ledmatrix.clear();
   for (size_t i = 0; i < 17; i++) {
     for (size_t j = 0; j < 7; j++) {
@@ -72,7 +72,7 @@ void displayFrame () {
   }
 }
 
-void setScrollingFrame (bool *_scrollingFrame [], uint8_t _frameLength){
+void set_scrolling_frame (bool *_scrollingFrame [], uint8_t _frameLength){
   scrollingFrameSet = true;
   for (size_t i = 0; i < _frameLength; i++) {
     scrollingFrame[i] = _scrollingFrame[i];

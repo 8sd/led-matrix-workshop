@@ -146,9 +146,9 @@ bool *matrix_h [5] = {f7f, f04, f7f, f00, f00};
 bool *matrix_i [5] = {f41, f7f, f41, f00, f00};
 bool *matrix_j [5] = {f62, f41, f7e, f00, f00};
 bool *matrix_k [5] = {f7f, f08, f14, f63, f00};
-bool *matrix_l [5] = {f7d, f01, f01, f00, f00};
+bool *matrix_l [5] = {f7f, f01, f01, f00, f00};
 bool *matrix_m [5] = {f7f, f20, f10, f20, f7f};
-bool *matrix_n [5] = {f7f, f02, f1c, f02, f7f};
+bool *matrix_n [5] = {f7f, f20, f1c, f02, f7f};
 bool *matrix_o [5] = {f7f, f41, f7f, f00, f00};
 bool *matrix_p [5] = {f7f, f50, f70, f00, f00};
 bool *matrix_q [5] = {f7f, f41, f43, f7f, f00};
@@ -306,7 +306,7 @@ void init_text (){
     characters['\''].size = 1;
 }
 
-uint8_t build_frame (bool *_scrollingFrame [], uint8_t _scrollingFrameLen, char *str, uint8_t str_len){
+uint8_t build_frame (bool *_scrollingFrame [], uint8_t _scrollingFrameLen, const char *str, uint8_t str_len){
   if (str_len == 0)
     str_len = strlen(str);
 
