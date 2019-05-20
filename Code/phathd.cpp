@@ -12,7 +12,7 @@ bool* scrollingFrame [100];
 
 void print_array (bool arry [7]){
   char str [32];
-  uint8_t arr [7];
+  uint8_t arr [7]={0};
   for (size_t i = 0; i < 7; i++)
   {
     arr[i]=arry[i]?1:0;
