@@ -12,7 +12,7 @@ bool* scrollingFrame [100];
 
 void print_array (bool arry [7]){
   char str [32];
-  uint8_t arr [7]={0};
+  uint8_t arr [7];//={0};
   for (size_t i = 0; i < 7; i++)
   {
     arr[i]=arry[i]?1:0;
@@ -41,7 +41,9 @@ void set_pixel (uint8_t x, uint8_t y, uint8_t val) {
   if (x > 16 || y > 6) {
     return;
   }
-
+  if (x == 2 && y == 6)
+    return;
+    
   if (x <= 8) {
     x = 8 - x;
   } else {

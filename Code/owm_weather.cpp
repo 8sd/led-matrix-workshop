@@ -1,6 +1,6 @@
 #include "owm_weather.h"
 
-const char* ssid     = "WLan";
+const char* ssid     = "wlan";
 const char* password = "psw";
 
 const char* host     = "api.openweathermap.org";
@@ -31,7 +31,7 @@ const char * get_weather () {
     const int httpPort = 80;
     if (!client.connect(host, httpPort)) {
         Serial.println("connection failed");
-        return "";
+        return "Error! ";
     }
 
     client.print(String("GET ") + url + " HTTP/1.1\r\n" +
@@ -43,7 +43,7 @@ const char * get_weather () {
         if (millis() - timeout > 5000) {
             Serial.println(">>> Client Timeout !");
             client.stop();
-            return "";
+            return "Error! ";
         }
     }
 
@@ -58,7 +58,7 @@ const char * get_weather () {
     if (error) {
       Serial.print(F("deserializeJson() failed: "));
       Serial.println(error.c_str());
-      return "";
+      return "Error! ";
     }
     JsonObject obj = doc.as<JsonObject>();
 
