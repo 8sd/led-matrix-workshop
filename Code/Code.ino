@@ -36,7 +36,9 @@ void setup() {
   }
   set_brightness(5);
   init_weather();
-  frame_len = build_frame(frame1, frame_len, get_weather());
+  const char *weather = get_weather();
+  Serial.println(weather);
+  frame_len = build_frame(frame1, frame_len, weather);
   Serial.printf("Frame built with length: %d\n", frame_len);Serial.flush();
   print_2d_array(frame1, frame_len);
   set_scrolling_frame(frame1, frame_len);
@@ -45,6 +47,6 @@ void setup() {
 
 void loop() {
   scroll();
-  delay(1000);
+  //delay(1000);
   Serial.println("Loop.");
 }

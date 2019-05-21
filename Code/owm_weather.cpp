@@ -1,7 +1,7 @@
 #include "owm_weather.h"
 
-const char* ssid     = "wlan";
-const char* password = "psw";
+const char* ssid     = SSID;
+const char* password = PASSWORD;
 
 const char* host     = "api.openweathermap.org";
 const char* url      = "http://api.openweathermap.org/data/2.5/weather?id=2929567&appid=32e66d9b409187b049d5d051e387990a";
@@ -64,7 +64,8 @@ const char * get_weather () {
 
     String weather = doc["weather"][0]["description"].as<char*>();
     Serial.println(weather);
-    void* res = malloc(weather.length());
-    memcpy(res, weather.c_str(), weather.length());
+    void* res = malloc(sizeof(char) * (weather.length() + 2));
+    memcpy(res, weather.c_str(), sizeof(char) * (weather.length() + 2));
+    ((char*)res)[weather.length()] = ' ';
     return (const char*) res;
 }
